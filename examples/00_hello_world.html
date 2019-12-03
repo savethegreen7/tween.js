@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<title>Tween.js / hello world!</title>
@@ -15,12 +15,13 @@
 			hello world!
 		</div>
 
-		<script src="../dist/tween.umd.js"></script>
+		<script src="../dist/tween.iife.js"></script>
 		<script src="js/RequestAnimationFrame.js"></script>
 		<script>
 			var position;
 			var target;
 			var tween, tweenBack;
+
 
 			init();
 			animate();
@@ -47,11 +48,11 @@
 
 			}
 
-			//If we register the callback animate, but the TWEEN.update(time) returns false, 
+			//If we register the callback animate, but the TWEEN.update(time) returns false,
 			//cancel/unregister the handler
 			function animate( time ) {
 				var id = requestAnimationFrame(animate);
-				
+
 				var result = TWEEN.update(time);
 
 				if(!result) cancelAnimationFrame(id);
@@ -63,7 +64,7 @@
 				target.style.webkitTransform = 'rotate(' + Math.floor(position.rotation) + 'deg)';
 				target.style.MozTransform = 'rotate(' + Math.floor(position.rotation) + 'deg)';
 			}
-			
+
 		</script>
 	</body>
 </html>

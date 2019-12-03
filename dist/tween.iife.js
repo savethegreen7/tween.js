@@ -1,8 +1,5 @@
-(function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-	typeof define === 'function' && define.amd ? define(factory) :
-	(global.TWEEN = factory());
-}(this, (function () { 'use strict';
+var TWEEN = (function () {
+	'use strict';
 
 	var version = '18.4.2';
 
@@ -969,4 +966,4 @@
 
 	return TWEEN;
 
-})));
+}());

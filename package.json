@@ -17,18 +17,36 @@
     "tween",
     "interpolation"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@types/node": "^12.12.14",
+    "moment": "^2.24.0",
+    "regenerator-runtime": "^0.13.3",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-terser": "^5.1.2",
+    "rollup-plugin-uglify": "^6.0.3"
+  },
   "scripts": {
     "build": "node scripts/write-version.js && npm run rollup-build && node scripts/remove-version.js",
     "rollup-build": "rollup -c ./rollup.config.js",
     "test": "npm run build && npm run test-unit && npm run test-lint",
     "test-unit": "nodeunit test/unit/nodeunitheadless.js",
-    "test-lint": "eslint src/Tween.js"
+    "test-lint": "eslint src/Tween.js",
+    "minify-iife": "node scripts/minify-iife.js"
   },
   "author": "tween.js contributors (https://github.com/tweenjs/tween.js/graphs/contributors)",
   "devDependencies": {
     "eslint": "^6.3.0",
     "nodeunit": "^0.9.5",
     "rollup": "^0.57.1"
+  },
+  "engines": {
+    "node": ">= 4.2.1",
+    "npm": ">= 8",
+    "yarn": ">= 1"
   }
 }
