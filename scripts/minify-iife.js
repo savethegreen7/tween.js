@@ -14,9 +14,9 @@ const  result = uglifyjs.minify(code, {
 	// 	comments: '/ **.* /'
 	// }
 });
-let rv = '1';
+let rv = '2';
 let copyWrite = code.match(/\/(\*)[^*]*\*+(?:[^*\/][^*]*\*+)*\//gm) || '';
-code = `${copyWrite}\n// modified ${id} , briller@sk.com , rv ${version}.${rv}\n` + result.code;
+code = `${copyWrite}\n// modified ${id} , rv ${version}.${rv}\n` + result.code;
 fs.writeFileSync(path.resolve('dist', 'tween.iife.min.js'), code);
 
 // uglifyjs ads.js -c drop_console -o ads.min.js
